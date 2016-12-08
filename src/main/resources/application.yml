@@ -1,0 +1,33 @@
+spring:
+  data:
+    rest:
+      base-path: /api/
+  datasource:
+    url: jdbc:mysql://localhost/user_detail?useSSL=false
+    username: rsm
+    password: rsm31234
+    validation-query: SELECT 1
+    test-on-borrow: true
+  jpa:
+    show_sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: false
+          use_query_cache: false
+        generate_statistics: false
+  application:
+    name: user-detail-service
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.120.56:8080/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+
+server:
+  port: 8081
