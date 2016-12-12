@@ -2,6 +2,7 @@ package com.user.detail.models;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,10 +17,11 @@ public class User extends BaseModelObject {
 
 	private int userid;
 	
+	@NotNull
 	private String firstName;
 	
 	private String lastName;
-
+	
 	private String email;
 
 	private int phoneNumber;
